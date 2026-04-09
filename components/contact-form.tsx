@@ -49,7 +49,6 @@ export function ContactForm() {
         body: JSON.stringify(data),
       })
 
-      // 🔥 ESTA ES LA CLAVE: LEER EL JSON
       const result = await response.json()
 
       if (response.ok && result.ok) {
@@ -66,17 +65,25 @@ export function ContactForm() {
     }
   }
 
+  // ⭐ PANTALLA DE ÉXITO BONITA
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#14b8a6]/10">
-          <CheckCircle2 className="h-8 w-8 text-[#14b8a6]" />
+      <div className="flex flex-col items-center justify-center py-16 text-center space-y-6">
+        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#14b8a6]/10">
+          <CheckCircle2 className="h-12 w-12 text-[#14b8a6]" />
         </div>
-        <h3 className="text-xl font-semibold mb-2">Mensaje enviado</h3>
-        <p className="text-muted-foreground mb-6">
-          Gracias, te respondemos en menos de 48 h.
+
+        <h2 className="text-2xl font-bold">¡Mensaje enviado!</h2>
+
+        <p className="text-muted-foreground max-w-sm">
+          Te responderemos lo antes posible.
         </p>
-        <Button variant="outline" onClick={() => setStatus("idle")}>
+
+        <Button
+          variant="outline"
+          onClick={() => setStatus("idle")}
+          className="mt-4"
+        >
           Enviar otro mensaje
         </Button>
       </div>
