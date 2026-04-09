@@ -25,25 +25,20 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    
-    // Honeypot check
-    if (honeypot) {
-      return
-    }
 
-    if (!legalAccepted) {
-      return
-    }
+    if (honeypot) return
+    if (!legalAccepted) return
 
     setIsSubmitting(true)
     setStatus("idle")
 
     const formData = new FormData(e.currentTarget)
+
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      phone: String(formData.get("phone") || ""),
+      message: String(formData.get("message") || ""),
       legalAccepted: true,
     }
 
@@ -78,10 +73,7 @@ export function ContactForm() {
         <p className="text-muted-foreground mb-6">
           Gracias, te respondemos en menos de 48 h.
         </p>
-        <Button 
-          variant="outline" 
-          onClick={() => setStatus("idle")}
-        >
+        <Button variant="outline" onClick={() => setStatus("idle")}>
           Enviar otro mensaje
         </Button>
       </div>
@@ -91,7 +83,7 @@ export function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Honeypot field - hidden from users */}
+        {/* Honeypot */}
         <div className="absolute -left-[9999px]" aria-hidden="true">
           <label htmlFor="website">Website</label>
           <input
@@ -107,51 +99,24 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="name">Nombre *</Label>
-          <Input
-            id="name"
-            name="name"
-            placeholder="Tu nombre"
-            required
-            className="bg-background"
-          />
+          <Input id="name" name="name" required placeholder="Tu nombre" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="email">Email *</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="tu@email.com"
-            required
-            className="bg-background"
-          />
+          <Input id="email" name="email" type="email" required placeholder="tu@email.com" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="phone">Teléfono (opcional)</Label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+34 600 000 000"
-            className="bg-background"
-          />
+          <Input id="phone" name="phone" type="tel" placeholder="+34 600 000 000" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="message">Mensaje *</Label>
-          <Textarea
-            id="message"
-            name="message"
-            placeholder="Cuéntanos sobre tu proyecto: qué tipo de negocio tienes, qué objetivos quieres alcanzar..."
-            rows={5}
-            required
-            className="bg-background resize-none"
-          />
+          <Textarea id="message" name="message" required rows={5} />
         </div>
 
-        {/* Legal checkbox */}
         <div className="flex items-start space-x-3">
           <Checkbox
             id="legal"
@@ -161,19 +126,11 @@ export function ContactForm() {
           />
           <label htmlFor="legal" className="text-sm text-muted-foreground leading-relaxed">
             He leído y acepto la{" "}
-            <button
-              type="button"
-              onClick={(e) => openModal(e, "privacidad")}
-              className="text-[#0d7377] dark:text-[#14b8a6] underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-[#14b8a6] focus:ring-offset-2 rounded"
-            >
+            <button type="button" onClick={(e) => openModal(e, "privacidad")} className="text-[#0d7377] underline">
               Política de Privacidad
             </button>{" "}
             y el{" "}
-            <button
-              type="button"
-              onClick={(e) => openModal(e, "aviso")}
-              className="text-[#0d7377] dark:text-[#14b8a6] underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-[#14b8a6] focus:ring-offset-2 rounded"
-            >
+            <button type="button" onClick={(e) => openModal(e, "aviso")} className="text-[#0d7377] underline">
               Aviso Legal
             </button>
             . *
@@ -187,32 +144,21 @@ export function ContactForm() {
           </div>
         )}
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           size="lg"
           disabled={isSubmitting || !legalAccepted}
-          className="w-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#00ffd1]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white"
         >
-          {isSubmitting ? (
-            "Enviando..."
-          ) : (
-            <>
-              Solicitar diagnóstico gratuito
-              <Send className="ml-2 h-4 w-4" />
-            </>
-          )}
+          {isSubmitting ? "Enviando..." : <>Solicitar diagnóstico gratuito <Send className="ml-2 h-4 w-4" /></>}
         </Button>
 
         <p className="text-xs text-muted-foreground text-center">
-          Responderemos en menos de 24 horas laborables.
+          Responderemos en menos de 48 horas laborables.
         </p>
       </form>
 
-      <ModalLegal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        type={modalType} 
-      />
+      <ModalLegal isOpen={modalOpen} onClose={() => setModalOpen(false)} type={modalType} />
     </>
   )
 }
