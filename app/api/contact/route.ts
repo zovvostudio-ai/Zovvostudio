@@ -9,12 +9,27 @@ export async function POST(request: Request) {
     const data = await request.json()
     const { name, email, phone, message, legalAccepted } = data
 
+    // Validaciones
     if (!name || !email || !message) {
-      return NextResponse.json({ ok: false, error: "Campos requeridos faltantes" }, { status: 400 })
+      return NextResponse.json(
+        { ok: false, error: "Campos requeridos faltantes" },
+        { status: 400 }
+      )
     }
 
     if (!legalAccepted) {
-      return NextResponse.json({ ok: false, error: "Debe aceptar la política de privacidad y el aviso legal" }, { status: 400 })
+      return NextResponse.json(
+        { ok: false, error: "Debe aceptar la política de privacidad y el aviso legal" },
+        { status: 400 }
+      )
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { ok: false, error: "Formato de email inválido" },
+        { status: 400 }
+      )
     }
 
     const sanitizedData = {
@@ -25,6 +40,7 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     }
 
+    // Enviar email con Resend
     const result = await resend.emails.send({
       from: "Zovvo Studio <onboarding@resend.dev>",
       to: [DESTINATION_EMAIL],
@@ -42,16 +58,22 @@ export async function POST(request: Request) {
       `,
     })
 
+    // Si Resend devuelve un warning, lo mostramos en consola pero NO rompemos el frontend
     if (result.error) {
       console.error("Resend warning:", result.error)
-      // NO devolvemos error al frontend
     }
 
-    return NextResponse.json({ ok: true, message: "Mensaje enviado correctamente" }, { status: 200 })
+    return NextResponse.json(
+      { ok: true, message: "Mensaje enviado correctamente" },
+      { status: 200 }
+    )
 
   } catch (error) {
     console.error("Error processing contact form:", error)
-    return NextResponse.json({ ok: false, error: "Error interno del servidor" }, { status: 500 })
+    return NextResponse.json(
+      { ok: false, error: "Error interno del servidor" },
+      { status: 500 }
+    )
   }
 }
 
