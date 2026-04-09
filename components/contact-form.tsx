@@ -49,7 +49,10 @@ export function ContactForm() {
         body: JSON.stringify(data),
       })
 
-      if (response.ok) {
+      // 🔥 ESTA ES LA CLAVE: LEER EL JSON
+      const result = await response.json()
+
+      if (response.ok && result.ok) {
         setStatus("success")
         e.currentTarget.reset()
         setLegalAccepted(false)
