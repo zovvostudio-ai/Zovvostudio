@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     // Enviar email con Resend
     await resend.emails.send({
-      from: "Zovvo Studio <onboarding@resend.dev>",
+      from: "Zovvo Studio <noreply@zovvostudio.com>",
       to: [DESTINATION_EMAIL],
       replyTo: sanitizedData.email,
       subject: `Nuevo contacto web: ${sanitizedData.name}`,
