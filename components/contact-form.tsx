@@ -49,15 +49,8 @@ export function ContactForm() {
         body: JSON.stringify(data),
       })
 
-      let result = { ok: false }
-
-      try {
-        result = await response.json()
-      } catch {
-        // Si falla el JSON, no queremos romper nada
-      }
-
-      if (response.ok && result.ok) {
+      // ⭐ Si la API responde 200, mostramos éxito SIEMPRE
+      if (response.ok) {
         setStatus("success")
         e.currentTarget.reset()
         setLegalAccepted(false)
@@ -71,7 +64,7 @@ export function ContactForm() {
     }
   }
 
-  // ⭐ PANTALLA DE ÉXITO (como la imagen que enviaste)
+  // ⭐ PANTALLA DE ÉXITO
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center space-y-6">
