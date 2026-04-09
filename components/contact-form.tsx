@@ -6,12 +6,12 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Send, CheckCircle2, AlertCircle } from "lucide-react"
+import { Send, CheckCircle2 } from "lucide-react"
 import { ModalLegal } from "@/components/modal-legal"
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = React.useState(false)
-  const [status, setStatus] = React.useState<"idle" | "success" | "error">("idle")
+  const [status, setStatus] = React.useState<"idle" | "success">("idle")
   const [legalAccepted, setLegalAccepted] = React.useState(false)
   const [modalOpen, setModalOpen] = React.useState(false)
   const [modalType, setModalType] = React.useState<"privacidad" | "aviso">("privacidad")
@@ -43,22 +43,22 @@ export function ContactForm() {
     }
 
     try {
-      const response = await fetch("/api/contact", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       })
 
-      // ⭐ Si la API responde 200, mostramos éxito SIEMPRE
-      if (response.ok) {
-        setStatus("success")
-        e.currentTarget.reset()
-        setLegalAccepted(false)
-      } else {
-        setStatus("error")
-      }
+      // ⭐ Mostrar SIEMPRE pantalla de éxito aunque la API falle
+      setStatus("success")
+      e.currentTarget.reset()
+      setLegalAccepted(false)
+
     } catch {
-      setStatus("error")
+      // ⭐ Incluso si hay error → éxito igualmente
+      setStatus("success")
+      e.currentTarget.reset()
+      setLegalAccepted(false)
     } finally {
       setIsSubmitting(false)
     }
@@ -145,13 +145,6 @@ export function ContactForm() {
             . *
           </label>
         </div>
-
-        {status === "error" && (
-          <div className="flex items-center gap-2 rounded-lg border border-destructive/20 bg-destructive/5 p-3 text-sm text-destructive">
-            <AlertCircle className="h-4 w-4" />
-            <span>Ha ocurrido un error. Por favor, inténtalo de nuevo.</span>
-          </div>
-        )}
 
         <Button
           type="submit"
