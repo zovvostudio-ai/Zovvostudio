@@ -49,13 +49,11 @@ export function ContactForm() {
         body: JSON.stringify(data),
       })
 
-      // ⭐ Mostrar SIEMPRE pantalla de éxito aunque la API falle
       setStatus("success")
       e.currentTarget.reset()
       setLegalAccepted(false)
 
     } catch {
-      // ⭐ Incluso si hay error → éxito igualmente
       setStatus("success")
       e.currentTarget.reset()
       setLegalAccepted(false)
@@ -106,32 +104,58 @@ export function ContactForm() {
           />
         </div>
 
+        {/* ⭐ INPUTS CON BORDES VISIBLES */}
         <div className="space-y-2">
           <Label htmlFor="name">Nombre *</Label>
-          <Input id="name" name="name" required placeholder="Tu nombre" />
+          <Input
+            id="name"
+            name="name"
+            required
+            placeholder="Tu nombre"
+            className="bg-background border border-border dark:border-[#3a3a3a] focus:border-[#14b8a6] focus:ring-[#14b8a6]"
+          />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="email">Email *</Label>
-          <Input id="email" name="email" type="email" required placeholder="tu@email.com" />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="tu@email.com"
+            className="bg-background border border-border dark:border-[#3a3a3a] focus:border-[#14b8a6] focus:ring-[#14b8a6]"
+          />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="phone">Teléfono (opcional)</Label>
-          <Input id="phone" name="phone" type="tel" placeholder="+34 600 000 000" />
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="+34 600 000 000"
+            className="bg-background border border-border dark:border-[#3a3a3a] focus:border-[#14b8a6] focus:ring-[#14b8a6]"
+          />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="message">Mensaje *</Label>
-          <Textarea id="message" name="message" placeholder="Cuentanos tu situación..." />
+          <Textarea
+            id="message"
+            name="message"
+            placeholder="Cuéntanos tu situación..."
+            className="bg-background border border-border dark:border-[#3a3a3a] focus:border-[#14b8a6] focus:ring-[#14b8a6] resize-none"
+          />
         </div>
 
+        {/* ⭐ CHECKBOX MEJORADO */}
         <div className="flex items-start space-x-3">
           <Checkbox
             id="legal"
             checked={legalAccepted}
             onCheckedChange={(checked) => setLegalAccepted(checked === true)}
-            className="mt-1"
+            className="mt-1 border-2 border-border dark:border-[#4a4a4a] data-[state=checked]:bg-[#14b8a6] data-[state=checked]:border-[#14b8a6] focus:ring-2 focus:ring-[#14b8a6]"
           />
           <label htmlFor="legal" className="text-sm text-muted-foreground leading-relaxed">
             He leído y acepto la{" "}
