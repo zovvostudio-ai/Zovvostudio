@@ -123,7 +123,7 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="message">Mensaje *</Label>
-          <Textarea id="message" name="message" required rows={5} />
+          <Textarea id="message" name="message" placeholder="Cuentanos tu situación..." />
         </div>
 
         <div className="flex items-start space-x-3">
