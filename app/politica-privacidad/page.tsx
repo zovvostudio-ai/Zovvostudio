@@ -21,7 +21,7 @@ export default function PoliticaPrivacidadPage() {
           <h2 className="text-xl font-semibold mt-8 mb-4">1. Responsable del tratamiento</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             El responsable del tratamiento de los datos personales recogidos a través de este sitio web es 
-            Zovvo Studio (en adelante, &quot;nosotros&quot; o &quot;Zovvo Studio&quot;).
+            el responsable legal de David Morrás (en adelante, &quot;nosotros&quot; o &quot;Zovvo Studio&quot;).
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Email de contacto: zovvostudio@gmail.com
