@@ -22,10 +22,23 @@ export function Footer() {
 
             {/* COL 1 — LOGO */}
             <div className="flex flex-col items-center md:items-start">
-              <span className="text-lg font-semibold text-[#0d7377]">
-                Zovvo Studio
-              </span>
-              <p className="text-sm text-muted-foreground">
+              <div className="flex items-center">
+                {/* Logo modo claro */}
+                <img 
+                  src="/logo-light.png"
+                  alt="Zovvo Studio"
+                  className="h-8 w-auto dark:hidden"
+                />
+
+                {/* Logo modo oscuro */}
+                <img 
+                  src="/logo-dark.png"
+                  alt="Zovvo Studio"
+                  className="h-8 w-auto hidden dark:block"
+                />
+              </div>
+
+              <p className="mt-2 text-sm text-muted-foreground">
                 Diseñamos páginas que venden.
               </p>
             </div>
