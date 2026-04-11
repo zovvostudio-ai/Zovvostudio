@@ -18,18 +18,19 @@ export function Footer() {
       <footer className="border-t border-border/40 bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
-          {/* GRID DE 4 COLUMNAS */}
           <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
 
             {/* COL 1 — LOGO */}
             <div className="flex flex-col items-center md:items-start">
-              <span className="text-lg font-semibold">Zovvo Studio</span>
+              <span className="text-lg font-semibold text-[#0d7377]">
+                Zovvo Studio
+              </span>
               <p className="text-sm text-muted-foreground">
                 Diseñamos páginas que venden.
               </p>
             </div>
 
-            {/* COL 2 — SECCIONES DEL HEADER */}
+            {/* COL 2 — SECCIONES */}
             <div className="flex flex-col text-center md:text-left space-y-2">
               <h4 className="font-semibold mb-2">Secciones</h4>
 
@@ -91,7 +92,6 @@ export function Footer() {
 
           </div>
 
-          {/* COPYRIGHT */}
           <div className="mt-10 border-t border-border/40 pt-8 text-center">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Zovvo Studio. Todos los derechos reservados.
