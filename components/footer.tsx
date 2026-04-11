@@ -20,9 +20,10 @@ export function Footer() {
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
 
-            {/* COL 1 — LOGO */}
+            {/* COL 1 — LOGO + NOMBRE */}
             <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center">
+              <div className="flex items-center gap-3">
+                
                 {/* Logo modo claro */}
                 <img 
                   src="images/logo-light.png"
@@ -36,6 +37,11 @@ export function Footer() {
                   alt="Zovvo Studio"
                   className="h-8 w-auto hidden dark:block"
                 />
+
+                {/* Nombre */}
+                <span className="text-lg font-semibold text-[#0d7377] dark:text-white">
+                  Zovvo Studio
+                </span>
               </div>
 
               <p className="mt-2 text-sm text-muted-foreground">
