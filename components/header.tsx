@@ -94,7 +94,7 @@ export function Header() {
             className="hidden md:block"
           >
             <Button className="bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#00ffd1]/20 transition-all">
-              Solicitar versión de prueba
+              Solicitar diagnóstico gratuito
             </Button>
           </a>
 

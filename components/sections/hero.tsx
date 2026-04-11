@@ -33,7 +33,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm opacity-0 animate-fade-in-up">
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Versión inicial de prueba sin compromiso</span>
+            <span className="text-muted-foreground">Diagnóstico de prueba sin compromiso</span>
           </div>
 
           {/* H1 */}
@@ -57,7 +57,7 @@ export function Hero() {
                 size="lg" 
                 className="group bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#00ffd1]/20 transition-all px-8"
               >
-                Solicitar versión de prueba
+                Solicitar diagnóstico gratuito
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
