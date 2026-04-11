@@ -25,14 +25,14 @@ export function Footer() {
               <div className="flex items-center">
                 {/* Logo modo claro */}
                 <img 
-                  src="/logo-light.png"
+                  src="images/logo-light.png"
                   alt="Zovvo Studio"
                   className="h-8 w-auto dark:hidden"
                 />
 
                 {/* Logo modo oscuro */}
                 <img 
-                  src="/logo-dark.png"
+                  src="images/logo-dark.png"
                   alt="Zovvo Studio"
                   className="h-8 w-auto hidden dark:block"
                 />
