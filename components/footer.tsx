@@ -38,8 +38,8 @@ export function Footer() {
                   className="h-8 w-auto hidden dark:block"
                 />
 
-                {/* Nombre */}
-                <span className="text-lg font-semibold text-[#0d7377] dark:text-white">
+                {/* Nombre con color corporativo SIEMPRE */}
+                <span className="text-lg font-semibold" style={{ color: "#0d7377" }}>
                   Zovvo Studio
                 </span>
               </div>
