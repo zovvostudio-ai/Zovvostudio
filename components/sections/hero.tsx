@@ -33,7 +33,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm opacity-0 animate-fade-in-up">
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Diagnóstico de prueba sin compromiso</span>
+            <span className="text-muted-foreground">Diagnostico de prueba sin compromiso</span>
           </div>
 
           {/* H1 */}
@@ -72,6 +72,15 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Mockup illustration */}
+        <div className="mt-16 w-full max-w-4xl opacity-0 animate-fade-in-up stagger-4">
+          <div className="relative mx-auto aspect-[16/10] rounded-xl border border-border/60 bg-card p-2 shadow-2xl shadow-[#0d7377]/10">
+            <div className="absolute left-4 top-4 flex gap-1.5">
+              <div className="h-3 w-3 rounded-full bg-red-400" />
+              <div className="h-3 w-3 rounded-full bg-yellow-400" />
+              <div className="h-3 w-3 rounded-full bg-green-400" />
+            </div>
+            <div className="h-full w-full rounded-lg bg-gradient-to-br from-muted/50 to-muted overflow-hidden">
               {/* Mock browser content */}
               <div className="flex h-full flex-col p-6">
                 <div className="mb-4 h-4 w-32 rounded bg-gradient-to-r from-[#0d7377]/20 to-[#14b8a6]/20" />
@@ -92,5 +101,8 @@ export function Hero() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
   )
 }
