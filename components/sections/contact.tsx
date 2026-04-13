@@ -85,24 +85,6 @@ export function Contact() {
                 </div>
               </div>
             </div>
-
-            <div className="mt-8 p-6 rounded-xl border border-border/60 bg-muted/30">
-              <h4 className="font-semibold mb-3">Nuestro proceso</h4>
-              <ol className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0d7377]/10 text-xs font-medium text-[#0d7377] dark:text-[#14b8a6]">1</span>
-                  <span>Cuéntanos tu idea y objetivos</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0d7377]/10 text-xs font-medium text-[#0d7377] dark:text-[#14b8a6]">2</span>
-                  <span>Te enviamos un diagnóstico gratuito</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0d7377]/10 text-xs font-medium text-[#0d7377] dark:text-[#14b8a6]">3</span>
-                  <span>Recibes una versión de prueba sin compromiso</span>
-                </li>
-              </ol>
-            </div>
           </div>
 
           {/* Contact form */}

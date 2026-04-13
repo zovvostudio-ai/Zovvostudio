@@ -18,7 +18,7 @@ const benefits = [
   {
     icon: Shield,
     title: "Soporte continuo",
-    description: "No te dejamos solo. Mantenimiento, actualizaciones y soporte incluidos para que te centres en tu negocio.",
+    description: "En todo momento tendrás acceso a nuestro equipo para resolver dudas, hacer ajustes y garantizar tu satisfacción total.",
   },
 ]
 

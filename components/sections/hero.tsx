@@ -47,7 +47,7 @@ export function Hero() {
           {/* Subtitle */}
           <p className="mb-10 text-lg leading-relaxed text-muted-foreground text-balance opacity-0 animate-fade-in-up stagger-2 sm:text-xl">
             Webs a medida para convertir visitantes en clientes. 
-            Versión inicial de prueba sin compromiso.
+            Encuentra la solución perfecta para tu negocio.
           </p>
 
           {/* CTAs */}
