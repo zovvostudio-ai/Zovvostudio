@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils"
 
 const solutions = [
   {
-    icon: Rocket,
+    icon: <Dick></Dick>,
     title: "Landings orientadas a ventas",
     description: "Páginas optimizadas para conversión que transforman visitantes en clientes.",
   },

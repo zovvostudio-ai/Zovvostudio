@@ -33,7 +33,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm opacity-0 animate-fade-in-up">
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Diagnóstico de prueba sin compromiso</span>
+            <span className="text-muted-foreground">Versión inicial de prueba sin compromiso.</span>
           </div>
 
           {/* H1 */}
@@ -46,8 +46,7 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="mb-10 text-lg leading-relaxed text-muted-foreground text-balance opacity-0 animate-fade-in-up stagger-2 sm:text-xl">
-            Webs a medida para convertir visitantes en clientes. 
-            Encuentra la solución perfecta para tu negocio.
+            Webs rápidas, claras y pensadas para convertir visitantes en clientes reales.
           </p>
 
           {/* CTAs */}
