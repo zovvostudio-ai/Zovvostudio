@@ -1,113 +1,171 @@
 "use client"
 
 import * as React from "react"
-import { Instagram, Mail } from "lucide-react"
-import { ModalLegal } from "@/components/modal-legal"
+import Link from "next/link"
+import Image from "next/image"
+import { useTheme } from "next-themes"
+import { Moon, Sun, Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
-export function Footer() {
-  const [modalOpen, setModalOpen] = React.useState(false)
-  const [modalType, setModalType] = React.useState<"privacidad" | "aviso">("privacidad")
+const navigation = [
+  { name: "Inicio", href: "#hero" },
+  { name: "Servicios", href: "#servicios" },
+  { name: "Nuestro método", href: "#proceso" },
+  { name: "Contacto", href: "#contacto" },
+]
 
-  const openModal = (type: "privacidad" | "aviso") => {
-    setModalType(type)
-    setModalOpen(true)
+export function Header() {
+  const { setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+
+  // ⭐ Estado para saber qué sección está activa
+  const [activeSection, setActiveSection] = React.useState("Inicio")
+
+  React.useEffect(() => {
+    setMounted(true)
+
+    const sections = navigation.map((item) => document.querySelector(item.href))
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id")
+            const navItem = navigation.find((n) => n.href === `#${id}`)
+            if (navItem) setActiveSection(navItem.name)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark")
+  }
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+      setMobileMenuOpen(false)
+    }
   }
 
   return (
-    <>
-      <footer className="border-t border-border/40 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          {mounted && (
+            <Image
+              src={resolvedTheme === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png"}
+              alt="Zovvo Studio"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
+          )}
+          <span className="text-xl font-semibold tracking-tight">Zovvo Studio</span>
+        </Link>
 
-          {/* GRID DE 4 COLUMNAS */}
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
-
-            {/* COL 1 — LOGO */}
-            <div className="flex flex-col items-center md:items-start">
-              <span className="text-lg font-semibold">Zovvo Studio</span>
-              <p className="text-sm text-muted-foreground">
-                Diseñamos páginas que venden.
-              </p>
-            </div>
-
-            {/* COL 2 — SECCIONES DEL HEADER */}
-            <div className="flex flex-col text-center md:text-left space-y-2">
-              <h4 className="font-semibold mb-2">Secciones</h4>
-
-              <a href="#hero" className="text-muted-foreground hover:text-foreground transition-colors">
-                Inicio
-              </a>
-              <a href="#servicios" className="text-muted-foreground hover:text-foreground transition-colors">
-                Servicios
-              </a>
-              <a href="#proceso" className="text-muted-foreground hover:text-foreground transition-colors">
-                Proceso
-              </a>
-              <a href="#contacto" className="text-muted-foreground hover:text-foreground transition-colors">
-                Contacto
-              </a>
-            </div>
-
-            {/* COL 3 — LEGAL */}
-            <div className="flex flex-col text-center md:text-left space-y-2">
-              <h4 className="font-semibold mb-2">Legal</h4>
-
-              <button
-                onClick={() => openModal("privacidad")}
-                className="text-muted-foreground hover:text-foreground transition-colors text-left"
-              >
-                Política de Privacidad
-              </button>
-
-              <button
-                onClick={() => openModal("aviso")}
-                className="text-muted-foreground hover:text-foreground transition-colors text-left"
-              >
-                Aviso Legal
-              </button>
-            </div>
-
-            {/* COL 4 — SÍGUENOS */}
-            <div className="flex flex-col text-center md:text-left space-y-2">
-              <h4 className="font-semibold mb-2">Síguenos</h4>
-
-              <a
-                href="mailto:zovvostudio@gmail.com"
-                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Mail className="h-5 w-5" />
-                Email
-              </a>
-
-              <a
-                href="https://instagram.com/zovvostudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-                Instagram
-              </a>
-            </div>
-
-          </div>
-
-          {/* COPYRIGHT */}
-          <div className="mt-10 border-t border-border/40 pt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Zovvo Studio. Todos los derechos reservados.
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Web diseñada siguiendo las pautas de accesibilidad WCAG 2.1
-            </p>
-          </div>
+        {/* Desktop navigation */}
+        <div className="hidden md:flex md:items-center md:gap-8">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className={cn(
+                "text-sm font-medium transition-colors",
+                activeSection === item.name
+                  ? "text-[#0d7377]"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
-      </footer>
 
-      <ModalLegal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        type={modalType} 
-      />
-    </>
+        <div className="flex items-center gap-4">
+          {/* Theme toggle */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full"
+          >
+            {mounted && (
+              resolvedTheme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )
+            )}
+          </Button>
+
+          {/* CTA Button - Desktop */}
+          <a
+            href="#contacto"
+            onClick={(e) => handleNavClick(e, "#contacto")}
+            className="hidden md:block"
+          >
+            <Button className="bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#00ffd1]/20 transition-all">
+              Solicitar diagnóstico gratuito
+            </Button>
+          </a>
+
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+      </nav>
+
+      {/* Mobile navigation */}
+      <div className={cn("md:hidden", mobileMenuOpen ? "block" : "hidden")}>
+        <div className="space-y-1 px-4 pb-4">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className={cn(
+                "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                activeSection === item.name
+                  ? "text-[#0d7377] bg-muted"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              )}
+            >
+              {item.name}
+            </a>
+          ))}
+
+          <a href="#contacto" onClick={(e) => handleNavClick(e, "#contacto")}>
+            <Button className="mt-2 w-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90">
+              Solicitar versión de prueba
+            </Button>
+          </a>
+        </div>
+      </div>
+    </header>
   )
 }
