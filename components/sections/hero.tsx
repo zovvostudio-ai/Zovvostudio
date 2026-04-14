@@ -33,20 +33,20 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm opacity-0 animate-fade-in-up">
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Versión inicial de prueba sin compromiso.</span>
+            <span className="text-muted-foreground">Diseño web para negocios y profesionales.</span>
           </div>
 
           {/* H1 */}
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-balance opacity-0 animate-fade-in-up stagger-1 sm:text-5xl lg:text-6xl">
-            Diseñamos páginas que{" "}
+            Atrae más clientes con una web que{" "}
             <span className="bg-gradient-to-r from-[#0d7377] to-[#14b8a6] bg-clip-text text-transparent">
-              venden
+              vende por ti
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mb-10 text-lg leading-relaxed text-muted-foreground text-balance opacity-0 animate-fade-in-up stagger-2 sm:text-xl">
-            Webs rápidas, claras y pensadas para convertir visitantes en clientes reales.
+          <p className="mb-10 text-lg leading-relaxed text-muted-foreground text-balance opacity-0 animate-fade-in-up stagger-2 sm:text-lg lg:text-xl">
+            Ya sea para una clínica, una cafetería o servicios profesionales. Creamos páginas rápidas, claras y optimizadas para multiplicar tus conversiones y hacer crecer tu negocio.
           </p>
 
           {/* CTAs */}
@@ -54,18 +54,18 @@ export function Hero() {
             <a href="#contacto" onClick={handleScrollToContact}>
               <Button 
                 size="lg" 
-                className="group bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#00ffd1]/20 transition-all px-8"
+                className="group bg-gradient-to-r from-[#0d7377] to-[#14b8a6] text-white hover:opacity-90 hover:shadow-lg hover:shadow-[#14b8a6]/20 transition-all px-8 text-base font-semibold"
               >
-                Solicitar diagnóstico gratuito
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Solicitar mi diseño de prueba gratis
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
             <a href="#servicios" onClick={(e) => {
               e.preventDefault()
               document.querySelector("#servicios")?.scrollIntoView({ behavior: "smooth" })
             }}>
-              <Button variant="outline" size="lg" className="px-8">
-                Ver servicios
+              <Button variant="outline" size="lg" className="px-8 text-base font-semibold">
+                Ver todo lo que ofrecemos
               </Button>
             </a>
           </div>

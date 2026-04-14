@@ -6,28 +6,28 @@ import { cn } from "@/lib/utils"
 const steps = [
   {
     number: "01",
-    title: "Diagnóstico gratuito",
-    description: "Cuéntanos tu proyecto y tus objetivos. Analizamos tu caso sin compromiso.",
+    title: "Nos conocemos",
+    description: "Cuéntanos sobre tu negocio (fisio, reformas, cafetería...) y qué necesitas. Te asesoramos sin compromisos.",
   },
   {
     number: "02",
-    title: "Versión inicial de prueba",
-    description: "Comprueba la estructura y el tono antes de tomar una decisión.",
+    title: "Primer diseño gratuito",
+    description: "Construimos un boceto de tu futura web para que veas la estructura y el estilo antes de tomar una decisión.",
   },
   {
     number: "03",
-    title: "Desarrollo y personalización",
-    description: "Ajustes, pruebas y refinamiento hasta que esté perfecta.",
+    title: "Desarrollo a medida",
+    description: "Aplicamos tu imagen, optimizamos los textos para vender y configuramos todo para que sea rapidísima.",
   },
   {
     number: "04",
-    title: "Revisión y validación final",
-    description: "Te mostramos la versión completa para que revises diseño, contenido y funcionalidad. Ajustamos lo necesario hasta que la web refleje exactamente lo que buscas.",
+    title: "Revisión conjunta",
+    description: "Repasamos cada detalle contigo. Hacemos todos los ajustes necesarios hasta que el resultado te parezca perfecto.",
   },
   {
     number: "05",
-    title: "Publicación y entrega",
-    description: "Tu web lista para recibir clientes y generar resultados.",
+    title: "¡Lanzamiento y a vender!",
+    description: "Publicamos tu web en internet. Ya está lista para recibir visitas, captar contactos y generar resultados reales.",
   },
 ]
 
@@ -62,13 +62,13 @@ export function Process() {
             "text-3xl font-bold tracking-tight mb-4 sm:text-4xl transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Cómo trabajamos
+            Tu web lista en 5 sencillos pasos
           </h2>
           <p className={cn(
             "text-lg text-muted-foreground transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Un proceso simple y transparente para que tengas el control en todo momento.
+            Sin tecnicismos ni dolores de cabeza. Tú te enfocas en tu negocio y nosotros en hacer el trabajo por ti.
           </p>
         </div>
 

@@ -13,34 +13,34 @@ import { cn } from "@/lib/utils"
 
 const solutions = [
   {
-    icon: <Dick></Dick>,
-    title: "Landings orientadas a ventas",
-    description: "Páginas optimizadas para conversión que transforman visitantes en clientes.",
+    icon: Rocket,
+    title: "Webs para Captar Clientes",
+    description: "Páginas optimizadas estratégicamente para que quien te visite, te contacte o te compre sin dudarlo.",
   },
   {
     icon: CalendarCheck,
-    title: "Landings con reservas integradas",
-    description: "Gestión de citas y reservas directamente desde tu landing page.",
+    title: "Sistemas de Reservas",
+    description: "Ideal para clínicas, peluquerías o asesores. Tus clientes podrán reservar citas directamente 24/7.",
   },
   {
     icon: ShoppingCart,
-    title: "E-commerce",
-    description: "Tiendas online seguras, rápidas y fáciles de gestionar.",
+    title: "Tiendas Online (E-commerce)",
+    description: "Vende tus productos a cualquier hora con una tienda segura, intuitiva y muy fácil de gestionar por ti mismo.",
   },
   {
     icon: Building2,
-    title: "Web corporativa",
-    description: "Presencia institucional profesional que transmite confianza.",
+    title: "Web Corporativa",
+    description: "Transmite profesionalidad absoluta. La carta de presentación perfecta para tu empresa local o franquicia.",
   },
   {
     icon: User,
-    title: "Web personal",
-    description: "Portfolio y sistema de contacto para profesionales.",
+    title: "Portfolio y Marca Personal",
+    description: "Destaca como profesional independiente. Muestra tu valor y facilita que te contraten por tus servicios.",
   },
   {
     icon: Wrench,
-    title: "Servicios extra",
-    description: "Mantenimiento, SEO básico y analítica para tu web.",
+    title: "Mantenimiento y SEO",
+    description: "Nos encargamos de que tu web siempre funcione, cargue súper rápido y aparezca en Google cuando te busquen.",
   },
 ]
 
@@ -73,13 +73,13 @@ export function Solutions() {
             "text-3xl font-bold tracking-tight mb-4 sm:text-4xl transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Soluciones a tu medida
+            Soluciones adaptadas a tu sector
           </h2>
           <p className={cn(
             "text-lg text-muted-foreground transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Cada proyecto es único. Transformamos tu idea en una web sólida, rápida y con propósito.
+            No importa si tienes una cafetería, un taller o eres freelance. Entendemos tu negocio y te damos la herramienta perfecta para escalar.
           </p>
         </div>
 
