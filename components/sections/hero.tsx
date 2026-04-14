@@ -46,7 +46,7 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="mb-10 text-lg leading-relaxed text-muted-foreground text-balance opacity-0 animate-fade-in-up stagger-2 sm:text-lg lg:text-xl">
-            Ya sea para una clínica, una cafetería o servicios profesionales. Creamos páginas rápidas, claras y optimizadas para multiplicar tus conversiones y hacer crecer tu negocio.
+            Para cualquier tipo de negocio, creamos páginas rápidas, claras y optimizadas para multiplicar tus conversiones y hacer crecer tu negocio.
           </p>
 
           {/* CTAs */}

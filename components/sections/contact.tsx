@@ -36,13 +36,13 @@ export function Contact() {
             "text-3xl font-bold tracking-tight mb-4 sm:text-4xl transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Hablemos de tu proyecto
+            ¿Listo para impulsar tu negocio?
           </h2>
           <p className={cn(
             "text-lg text-muted-foreground transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Cuéntanos tu idea y recibe una versión inicial de prueba sin compromiso.
+            Escríbenos, cuéntanos qué ofreces (servicios, tienda, clínica...) y te mostraremos cómo podemos ayudarte a conseguir más clientes.
           </p>
         </div>
 

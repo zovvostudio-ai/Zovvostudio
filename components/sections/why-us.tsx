@@ -7,18 +7,18 @@ import { cn } from "@/lib/utils"
 const benefits = [
   {
     icon: Zap,
-    title: "Rápido y sin compromiso",
-    description: "Recibe una versión inicial de prueba para comprobar que es lo que buscas antes de comprometerte.",
+    title: "Tranquilidad total (Boceto gratis)",
+    description: "No compres a ciegas. Te enseñamos un diseño inicial de prueba de tu web para que compruebes nuestra calidad antes de comprometerte.",
   },
   {
     icon: CheckCircle2,
-    title: "Orientado a resultados",
-    description: "Diseñamos cada elemento pensando en convertir visitantes en clientes reales para tu negocio.",
+    title: "Enfoque 100% en ventas",
+    description: "Una web no debe ser un gasto, sino una inversión. Diseñamos estructuras, botones y textos para que consigas más clientes.",
   },
   {
     icon: Shield,
-    title: "Soporte continuo",
-    description: "En todo momento tendrás acceso a nuestro equipo para resolver dudas, hacer ajustes y garantizar tu satisfacción total.",
+    title: "Trato humano y cercano",
+    description: "Olvídate de hablar con máquinas. Tendrás contacto directo y cercano con nosotros para resolver cualquier duda al instante.",
   },
 ]
 
@@ -51,13 +51,13 @@ export function WhyUs() {
             "text-3xl font-bold tracking-tight mb-4 sm:text-4xl transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Por qué elegirnos
+            ¿Por qué trabajar con nosotros?
           </h2>
           <p className={cn(
             "text-lg text-muted-foreground transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            Nos diferenciamos por nuestra cercanía y enfoque en resultados reales.
+            No solo hacemos webs bonitas; creamos herramientas rentables para que tu negocio local o servicio crezca de verdad.
           </p>
         </div>
 
