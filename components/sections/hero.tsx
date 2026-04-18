@@ -33,7 +33,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm opacity-0 animate-fade-in-up">
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Diseño web para negocios y profesionales.</span>
+            <span className="text-muted-foreground">Diseño web para negocios y profesionales desde 50€.</span>
           </div>
 
           {/* H1 */}

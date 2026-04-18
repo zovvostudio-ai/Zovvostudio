@@ -86,7 +86,7 @@ export function Solutions() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
             <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
-            <span className="text-muted-foreground">Diseño web para negocios y profesionales desde 80€.</span>
+            <span className="text-muted-foreground">Diseño web para negocios y profesionales desde 50€.</span>
           </div>
         </div>
 
