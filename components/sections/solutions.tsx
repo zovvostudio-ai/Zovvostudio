@@ -81,6 +81,13 @@ export function Solutions() {
           )}>
             No importa si tienes una cafetería, un taller o eres freelance. Entendemos tu negocio y te damos la herramienta perfecta para escalar.
           </p>
+          <div className={cn(
+            "mt-8 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm transition-all duration-700 delay-200",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}>
+            <span className="mr-2 h-2 w-2 rounded-full bg-gradient-to-r from-[#0d7377] to-[#14b8a6]" />
+            <span className="text-muted-foreground">Diseño web para negocios y profesionales desde 80€.</span>
+          </div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

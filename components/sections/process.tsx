@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Nos conocemos",
-    description: "Cuéntanos sobre tu negocio (fisio, reformas, cafetería...) y qué necesitas. Te asesoramos sin compromisos.",
+    description: "Cuéntanos sobre tu negocio y qué necesitas. Te asesoramos sin compromisos.",
   },
   {
     number: "02",
