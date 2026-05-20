@@ -62,6 +62,9 @@ export function Footer() {
               <a href="#proceso" className="text-muted-foreground hover:text-foreground transition-colors">
                 Proceso
               </a>
+              <a href="#ejemplos" className="text-muted-foreground hover:text-foreground transition-colors">
+                Ejemplos
+              </a>
               <a href="#contacto" className="text-muted-foreground hover:text-foreground transition-colors">
                 Contacto
               </a>

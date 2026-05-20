@@ -12,6 +12,7 @@ const navigation = [
   { name: "Inicio", href: "#hero" },
   { name: "Servicios", href: "#servicios" },
   { name: "Nuestro método", href: "#proceso" },
+  { name: "Ejemplos", href: "#ejemplos" },
   { name: "Contacto", href: "#contacto" },
 ]
 
