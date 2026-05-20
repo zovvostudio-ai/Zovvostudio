@@ -44,9 +44,9 @@ const projects = [
   },
   {
     id: "peluqueria",
-    title: "Stylo & Barber",
-    subtitle: "Salón de Peluquería & Barbería",
-    description: "Una web prémium e interactiva pensada para centros de estética, peluquerías y barberías de alto standing. Destaca por su estética oscura y elegante, galería de trabajos, listado de tarifas interactivo y selector inteligente de servicios y citas.",
+    title: "Studio Hair",
+    subtitle: "Salón de Peluquería & Estética",
+    description: "Una web prémium e interactiva pensada para centros de estética, peluquerías y barberías de alto standing. Destaca por su estética moderna y elegante, galería de trabajos, listado de tarifas interactivo y selector inteligente de servicios y citas.",
     link: "https://demo-peluqueria.vercel.app/",
     colorTheme: "amber",
     icon: Scissors,
@@ -57,14 +57,14 @@ const projects = [
       { name: "Ultra Rápida", icon: Gauge }
     ],
     mockup: {
-      brand: "Stylo & Barber",
-      tagline: "El Arte del Estilo y Cuidado Masculino",
+      brand: "Studio Hair",
+      tagline: "El Arte del Estilo y Cuidado Personal",
       logoColor: "text-amber-500 dark:text-amber-400",
       bgGradient: "from-slate-950/90 to-zinc-900/90 dark:from-slate-950 dark:to-zinc-950",
       cardBg: "bg-zinc-900/80 border border-amber-500/20",
       buttonColor: "bg-amber-500 hover:bg-amber-600 text-zinc-950",
       highlightText: "text-amber-400",
-      services: ["Corte & Estilo", "Afeitado Clásico", "Tratamiento Capilar"]
+      services: ["Corte & Estilo", "Coloración", "Tratamiento de Brillo"]
     }
   }
 ]
@@ -142,90 +142,13 @@ export function Examples() {
                     <div className="w-12" />
                   </div>
 
-                  {/* Cuerpo del Navegador (Vista simulada de la Web) */}
-                  <div className={cn(
-                    "relative aspect-[16/10] w-full overflow-hidden rounded-b-lg flex flex-col p-4 select-none",
-                    project.id === "fisioterapia" 
-                      ? "bg-gradient-to-br from-emerald-50 to-teal-50/50 dark:from-emerald-950/15 dark:to-teal-950/10 text-slate-800 dark:text-slate-200" 
-                      : "bg-gradient-to-br from-slate-950 to-zinc-900 text-slate-200"
-                  )}>
-                    
-                    {/* Mini Header del Sitio */}
-                    <div className="flex justify-between items-center border-b border-black/5 dark:border-white/5 pb-2 mb-3">
-                      <span className={cn("text-xs font-bold flex items-center gap-1.5", project.mockup.logoColor)}>
-                        <project.icon className="h-3.5 w-3.5" />
-                        {project.mockup.brand}
-                      </span>
-                      <div className="flex gap-2">
-                        <span className="h-1.5 w-6 rounded bg-black/10 dark:bg-white/10" />
-                        <span className="h-1.5 w-6 rounded bg-black/10 dark:bg-white/10" />
-                        <span className="h-1.5 w-6 rounded bg-black/10 dark:bg-white/10" />
-                      </div>
-                    </div>
-
-                    {/* Contenido Simulado */}
-                    <div className="flex-1 flex flex-col justify-center items-center text-center px-4">
-                      
-                      {/* Distintivo de Cita */}
-                      <span className={cn(
-                        "inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full font-medium mb-2",
-                        project.id === "fisioterapia" 
-                          ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
-                          : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                      )}>
-                        <Sparkles className="h-2 w-2" />
-                        Demo en vivo
-                      </span>
-
-                      {/* Título Principal */}
-                      <h4 className={cn(
-                        "text-sm sm:text-base font-bold tracking-tight mb-2 max-w-[280px]",
-                        project.id === "fisioterapia" ? "text-slate-900 dark:text-white" : "text-white"
-                      )}>
-                        {project.mockup.tagline}
-                      </h4>
-
-                      {/* Servicios o características representativos */}
-                      <div className="flex flex-wrap justify-center gap-1.5 mb-3 max-w-[280px]">
-                        {project.mockup.services.map((service) => (
-                          <span 
-                            key={service} 
-                            className={cn(
-                              "text-[8px] px-1.5 py-0.5 rounded transition-colors",
-                              project.id === "fisioterapia"
-                                ? "bg-emerald-500/5 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-500/10"
-                                : "bg-zinc-800 text-zinc-300"
-                            )}
-                          >
-                            {service}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Mini Widget o Tarjeta interactiva interna */}
-                      <div className={cn(
-                        "w-full max-w-[260px] p-2 rounded-lg text-left shadow-sm flex items-center justify-between",
-                        project.mockup.cardBg
-                      )}>
-                        <div className="flex items-center gap-2">
-                          <div className={cn(
-                            "h-6 w-6 rounded-full flex items-center justify-center",
-                            project.id === "fisioterapia" 
-                              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300" 
-                              : "bg-amber-500/10 text-amber-400"
-                          )}>
-                            <CalendarCheck2 className="h-3 w-3" />
-                          </div>
-                          <div>
-                            <p className="text-[8px] font-bold text-muted-foreground dark:text-zinc-400">Reserva de citas</p>
-                            <p className="text-[9px] font-medium text-foreground dark:text-zinc-200">Disponibilidad en vivo</p>
-                          </div>
-                        </div>
-                        <span className={cn("text-[8px] px-2 py-1 rounded font-semibold font-mono", project.mockup.buttonColor)}>
-                          RESERVAR
-                        </span>
-                      </div>
-                    </div>
+                  {/* Cuerpo del Navegador (Captura Real de la Web) */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-b-lg bg-muted select-none">
+                    <img 
+                      src={project.id === "fisioterapia" ? "/images/fisioterapia-demo.png" : "/images/peluqueria-demo.png"} 
+                      alt={`Captura de pantalla de ${project.title}`}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
                   </div>
                 </div>
 
